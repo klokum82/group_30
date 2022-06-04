@@ -1,0 +1,221 @@
+(1. создать папку dir_1)
+mav71957@pc083419:~/groop_30$ mkdir dir_1 
+
+(2. зайти в папку dir_1)
+mav71957@pc083419:~/groop_30$ cd dir_1 
+
+(3. создать папку inner_dir_1)
+mav71957@pc083419:~/groop_30/dir_1$ mkdir inner_dir_1 
+
+(4. посмотреть где нахожусь)
+mav71957@pc083419:~/groop_30/dir_1$ pwd
+/home/SQL/mav71957/groop_30/dir_1 
+
+(5. создать пустой файл tf_1.txt)
+mav71957@pc083419:~/groop_30/dir_1$ touch tf_1.txt
+
+(6. создать файл при помощи cat со следующими строками)
+mav71957@pc083419:~/groop_30/dir_1$ cat >> tf_2.txt
+the first 1
+the second 2
+the third 3
+^C
+
+(7. зайти в папку inner_dir_1)
+mav71957@pc083419:~/groop_30/dir_1$ cd inner_dir_1
+
+(8. через cat создать файл tf_3.txt с любыми строками)
+mav71957@pc083419:~/groop_30/dir_1/inner_dir_1$ cat >> tf_3.txt
+line 1
+line 2
+line 3
+^C
+
+(9. через cat добавить в файл tf_3.txt строку the second 2)
+mav71957@pc083419:~/groop_30/dir_1/inner_dir_1$ cat >> tf_3.txt
+the second 2
+^C
+
+(10. через cat добавить в файл tf_3.txt строку the sec 2)
+mav71957@pc083419:~/groop_30/dir_1/inner_dir_1$ cat >> tf_3.txt
+the sec 2
+^C
+
+(11. через cat добавить в файл tf_2.txt строку the sec 3)
+mav71957@pc083419:~/groop_30/dir_1/inner_dir_1$ cat >> tf_2.txt
+the sec 3
+^C
+
+(12. через cat добавить в файл tf_3.txt строку the SeConD 2)
+mav71957@pc083419:~/groop_30/dir_1/inner_dir_1$ cat >> tf_3.txt
+the SeCoNd 2
+^C
+
+(13. через cat добавить в файл tf_2.txt строку the seConD 2)
+mav71957@pc083419:~/groop_30/dir_1/inner_dir_1$ cat >> tf_2.txt
+the seConD 2
+^C
+
+(14. создать файл tf_4.txt с 15 строками)
+mav71957@pc083419:~/groop_30/dir_1/inner_dir_1$ cat >> tf_4.txt
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+^C
+
+(15. создать файл tF_5.txt с 13 строками)
+mav71957@pc083419:~/groop_30/dir_1/inner_dir_1$ cat >> tF_5.txt
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+^C
+
+(16. вывести список всех файлов в папке)
+mav71957@pc083419:~/groop_30/dir_1/inner_dir_1$ find -type f
+./tf_2.txt
+./tf_3.txt
+./tf_5.txt
+./tf_4.txt
+
+(17. выйти из папки inner_dir_1)
+mav71957@pc083419:~/groop_30/dir_1/inner_dir_1$ cd ..
+
+(18. вывести содержимое файла tf_3.txt в терминал)
+mav71957@pc083419:~/groop_30/dir_1$ cat inner_dir_1/tf_3.txt
+line 1
+line 2
+line 3
+the second 2
+the sec 2
+the SeCoNd 2
+ 
+(19. найти путь к файлу tf_4.txt)
+mav71957@pc083419:~/groop_30/dir_1$ realpath tf_4.txt
+/home/SQL/mav71957/groop_30/dir_1/tf_4.txt 
+
+(20. очистить файл tf_4.txt от содержимого без удаления самого файла)
+mav71957@pc083419:~/groop_30/dir_1$ echo -n > tf_4.txt
+
+(21. найти путь к файлам у которых есть "tf" в названии)
+mav71957@pc083419:~/groop_30/dir_1$ find -name "*tf*"
+./tf_2.txt
+./inner_dir_1/tf_2.txt
+./inner_dir_1/tf_3.txt
+./inner_dir_1/tf_4.txt
+./tf_1.txt
+./tf_4.txt
+
+(22. найти путь к файлам у которых есть "tf" в названии и буквы в любом регистре)
+mav71957@pc083419:~/groop_30/dir_1$ find -iname "*tf*"
+./tf_2.txt
+./inner_dir_1/tf_2.txt
+./inner_dir_1/tf_3.txt
+./inner_dir_1/tF_5.txt
+./inner_dir_1/tf_4.txt
+./tf_1.txt
+./tf_4.txt
+
+(23. найти строки в файлах где есть комбинация букв "sec" в текущей папке)
+mav71957@pc083419:~/groop_30/dir_1$ grep sec *
+grep: inner_dir_1: Это каталог
+tf_2.txt:the second 2
+
+(24. найти строки в файлах где есть комбинация букв "sec" в любом регистре в текущей папке)
+mav71957@pc083419:~/groop_30/dir_1$ grep -i sec *
+grep: inner_dir_1: Это каталог
+tf_2.txt:the second 2
+
+(25. найти строки в файлах где есть только комбинация букв "sec" в текущей папке)
+mav71957@pc083419:~/groop_30/dir_1$ grep -x sec *
+grep: inner_dir_1: Это каталог
+
+(26. найти строки в файлах где есть только комбинация букв "sec" в любом регистре в текущей папке)
+mav71957@pc083419:~/groop_30/dir_1$ grep -ix sec *
+grep: inner_dir_1: Это каталог
+
+(27. найти строки в файлах где есть комбинация букв "second" в текущей папке)
+mav71957@pc083419:~/groop_30/dir_1$ grep second *
+grep: inner_dir_1: Это каталог
+tf_2.txt:the second 2
+
+(28. найти строки в файлах где есть комбинация букв "second" в любом регистре в текущей папке)
+mav71957@pc083419:~/groop_30/dir_1$ grep -i second *
+grep: inner_dir_1: Это каталог
+tf_2.txt:the second 2
+
+(29. найти строки в файлах где есть комбинация букв "second" во всех папках ниже уровнем)
+mav71957@pc083419:~/groop_30/dir_1$ grep -r second */
+inner_dir_1/tf_3.txt:the second 2 
+
+(30. найти только путь и название файла в строках которого есть комбинация букв sec в текущей папке)
+mav71957@pc083419:~/groop_30/dir_1$ grep -l second *
+grep: inner_dir_1: Это каталог
+tf_2.txt
+
+(31. найти все строки во всех файлах где нет комбинации "second")
+mav71957@pc083419:~/groop_30/dir_1$ grep -v second *
+grep: inner_dir_1: Это каталог
+tf_2.txt:the first 1
+tf_2.txt:the third 3
+
+(32. найти только название и путь к файлам где нет комбинации "second")
+mav71957@pc083419:~/groop_30/dir_1$ grep -L second *
+grep: inner_dir_1: Это каталог
+inner_dir_1
+tf_1.txt
+tf_4.txt
+ 
+(33. вывести в терминал 4 последних строк любого текстового файла)
+mav71957@pc083419:~/groop_30/dir_1$ tail -n4 inner_dir_1/tf_3.txt
+line 3
+the second 2
+the sec 2
+the SeCoNd 2
+
+(34. вывести в терминал 4 первые строки любого текстового файла)
+mav71957@pc083419:~/groop_30/dir_1$ head -n4 inner_dir_1/tf_3.txt
+line 1
+line 2
+line 3
+the second 2
+
+(35. команда в одну строчку. Создать папку и создать текстовый файл с содержимым)
+mav71957@pc083419:~/groop_30/dir_1$ mkdir dir_2 ; echo "hello" > tf_6.txt 
+
+(36. команда в одну строку. переместить в любую одну папку текстовые файлы у которых в содержимом есть слово "sec")
+mav71957@pc083419:~/groop_30/dir_1$ grep -lr sec * | xargs mv -t dir_2
+
+(37. команда в одну строку. скопировать в любую одну папку текстовые файлы у которых в содержимом есть слово "sec")
+mav71957@pc083419:~/groop_30/dir_1$ grep -lr sec * | xargs cp -t inner_dir_1 
+
+(38. команда в одну строку. найти все строки с "sec" во всех текстовых файлах, скопировать и вставить эти строки в один новый созданный текстовый файл)
+mav71957@pc083419:~/groop_30/dir_1$ grep -hr sec * > tf_7.txt
+
+(39. команда в одну строку. удалить текстовые файлы у которых в содержимом есть слово "sec")
+mav71957@pc083419:~/groop_30/dir_1$ grep -lr sec * | xargs rm
+
+(40. Просто вывести в терминал строку Good job!!)
+mav71957@pc083419:~/groop_30/dir_1$ echo 'Good job!!'
+Good job!! 

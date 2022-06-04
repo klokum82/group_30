@@ -1,0 +1,393 @@
+GIT Homework 1
+
+Для выполнения задания у вас должен быть установлен для Windows - GitBash.
+Создан аккаунт в GitHub
+
+Все шаги сценария выполняйте в терминале GitBush, Terminal, в папке под гитом.
+
+Как отправить ДЗ на проверку.
+ 1. Создайте текстоовый файл как в первом ДЗ по Terminal.
+ 2. Сценарий перенесите в этот файл.
+ 3. На против каждого действия - напишите команду в GitBash
+
+Файл со сценарием и ссылку на свой гит хаб отправляйте менторам на проверку.
+
+JSON
+ 4. Создать внешний репозиторий c названием JSON.
+На вэбе Repositories --> New --> Repos Name:JSON --> Check "Add a README file" --> Press "Create repository"
+
+ 5. Клонировать репозиторий JSON на локальный компьютер. 
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir
+$ git clone git@github.com:klokum82/JSON.git
+Cloning into 'JSON'...
+The authenticity of host 'github.com (140.82.121.3)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? y
+Please type 'yes', 'no' or the fingerprint: yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+
+ 6. Внутри локального JSON создать файл “new.json”.
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir
+$ cd JSON
+
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/JSON (main)
+$ touch test.json
+
+ 7. Добавить файл под гит.
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/JSON (main)
+$ git add test.json
+
+ 8. Закоммитить файл.
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/JSON (main)
+$ git commit -m "comment"
+[main 754e636] comment
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test.json
+
+ 9. Отправить файл на внешний GitHub репозиторий.
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/JSON (main)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 267 bytes | 89.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:klokum82/JSON.git
+   82e233a..754e636  main -> main
+
+ 10. Отредактировать содержание файла “new.json” - написать информацию о себе (ФИО, возраст, количество домашних животных, будущая желаемая зарплата). Всё написать в формате JSON.
+ KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/JSON (main)
+$ vim test.json 
+
+ 11. Отправить изменения на внешний репозиторий.
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/JSON (main)
+$ git commit -m "FIO, age, number of pets, future desired salary" && git push
+[main 3785cb3] FIO, age, number of pets, future desired salary
+ 1 file changed, 5 insertions(+)
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 356 bytes | 178.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:klokum82/JSON.git
+   754e636..3785cb3  main -> main
+
+ 12. Создать файл preferences.json
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/JSON (main)
+$ touch preferences.json
+
+ 13. В файл preferences.json добавить информацию о своих предпочтениях (Любимый фильм, любимый сериал, любимая еда, любимое время года, сторона которую хотели бы посетить) в формате JSON.
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/JSON (main)
+$ vim preferences.json
+
+ 14. Создать файл sklls.json добавить информацию о скиллах которые будут изучены на курсе в формате JSON
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/JSON (main)
+$ touch skills.json
+
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/JSON (main)
+$ vim skills.json
+
+ 15. Отправить сразу 2 файла на внешний репозиторий.
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/JSON (main)
+$ git add . && git commit -m "preferences and skills" && git push
+warning: LF will be replaced by CRLF in preferences.json.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in skills.json.
+The file will have its original line endings in your working directory
+[main 1c0cd89] preferences and skills
+ 2 files changed, 34 insertions(+)
+ create mode 100644 preferences.json
+ create mode 100644 skills.json
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 1.56 KiB | 531.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:klokum82/JSON.git
+   3785cb3..1c0cd89  main -> main
+
+ 16. На веб интерфейсе создать файл bug_report.json.
+на вэбе Add file --> Create new file --> Name:bug_report.json
+
+ 17. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+Commit New File
+
+ 18. На веб интерфейсе модифицировать файл bug_report.json, добавить баг репорт в формате JSON.
+Choose bug_report.json --> Edit this file
+
+ 19. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+Press Commit changes
+
+ 20. Синхронизировать внешний и локальный репозиторий JSON
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/JSON (main)
+$ git pull
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), 2.02 KiB | 7.00 KiB/s, done.
+From github.com:klokum82/JSON
+   1c0cd89..2f77e67  main       -> origin/main
+Updating 1c0cd89..2f77e67
+Fast-forward
+ bug_report.json | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+ create mode 100644 bug_report.json
+
+
+XML
+ 21. Создать внешний репозиторий c названием XML.
+На вэбе Repositories --> New --> Repos Name:XML --> Check "Add a README file" --> Press "Create repository"
+
+ 22. Клонировать репозиторий XML на локальный компьютер.
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir
+$ git clone git@github.com:klokum82/XML.git
+Cloning into 'XML'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+
+ 23. Внутри локального XML создать файл “new.xml”.
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir
+$ cd XML && touch test.xml
+
+ 24. Добавить файл под гит.
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/XML (main)
+$ git add test.xml
+
+ 25. Закоммитить файл.
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/XML (main)
+$ git commit -m "xml"
+[main 323f1b2] xml
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test.xml
+
+ 26. Отправить файл на внешний GitHub репозиторий.
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/XML (main)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 263 bytes | 131.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:klokum82/XML.git
+   dcb10ed..323f1b2  main -> main
+
+ 27. Отредактировать содержание файла “new.xml” - написать информацию о себе (ФИО, возраст, количество домашних животных, будущая желаемая зарплата). Всё написать в формате XML.
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/XML (main)
+$ vim test.xml
+
+ 28. Отправить изменения на внешний репозиторий.
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/XML (main)
+$ git add test.xml && git commit -m "FIO, age, number of pets, future desired salary" && git push
+warning: LF will be replaced by CRLF in test.xml.
+The file will have its original line endings in your working directory
+[main be025e9] FIO, age, number of pets, future desired salary
+ 1 file changed, 5 insertions(+)
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 393 bytes | 196.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:klokum82/XML.git
+   323f1b2..be025e9  main -> main
+
+ 29. Создать файл preferences.xml
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/XML (main)
+$ touch preferences.xml
+
+ 30. В файл preferences.xml добавить информацию о своих предпочтениях (Любимый фильм, любимый сериал, любимая еда, любимое время года, сторона которую хотели бы посетить) в формате XML.
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/XML (main)
+$ vim preferences.xml
+
+ 31. Создать файл sklls.xml добавить информацию о скиллах которые будут изучены на курсе в формате XML
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/XML (main)
+$ touch skills.xml && vim skills.xml
+
+ 32. Сделать коммит в одну строку.
+ 33. Отправить сразу 2 файла на внешний репозиторий.
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/XML (main)
+$ git add . && git commit -m "preferences and skills" && git push
+warning: LF will be replaced by CRLF in preferences.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in skills.xml.
+The file will have its original line endings in your working directory
+[main 935db26] preferences and skills
+ 2 files changed, 33 insertions(+)
+ create mode 100644 preferences.xml
+ create mode 100644 skills.xml
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 1.55 KiB | 530.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:klokum82/XML.git
+   be025e9..935db26  main -> main
+
+ 34. На веб интерфейсе создать файл bug_report.xml.
+на вэбе Add file --> Create new file --> Name:bug_report.xml
+
+ 35. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+Commit New File
+
+ 36. На веб интерфейсе модифицировать файл bug_report.xml, добавить баг репорт в формате XML.
+Choose bug_report.xml --> Edit this file
+
+ 37. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+Press Commit changes
+
+ 38. Синхронизировать внешний и локальный репозиторий XML
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/XML (main)
+$ git pull
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), 2.02 KiB | 7.00 KiB/s, done.
+From github.com:klokum82/XML
+   935db26..d8ed227  main       -> origin/main
+Updating 935db26..d8ed227
+Fast-forward
+ bug_report.xml | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+ create mode 100644 bug_report.xml
+
+
+TXT
+ 1. Создать внешний репозиторий c названием TXT.
+На вэбе Repositories --> New --> Repos Name:XML --> Check "Add a README file" --> Press "Create repository"
+
+ 2. Клонировать репозиторий TXT на локальный компьютер.
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir
+$ git clone git@github.com:klokum82/TXT.git
+Cloning into 'TXT'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+
+ 3. Внутри локального TXT создать файл “new.txt”.
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir
+$ cd TXT && touch test.txt
+
+ 4. Добавить файл под гит.
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/TXT (main)
+$ git add test.txt
+
+ 5. Закоммитить файл.
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/TXT (main)
+$ git commit -m "TXT"
+[main 39d8723] TXT
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test.txt
+
+ 6. Отправить файл на внешний GitHub репозиторий.
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/TXT (main)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 266 bytes | 133.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:klokum82/TXT.git
+   8f183e7..39d8723  main -> main
+
+ 7. Отредактировать содержание файла “new.txt” - написать информацию о себе (ФИО, возраст, количество домашних животных, будущая желаемая зарплата). Всё написать в формате TXT.
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/TXT (main)
+$ vim test.txt
+
+ 8. Отправить изменения на внешний репозиторий.
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/TXT (main)
+$ git add test.txt && git commit -m "FIO, age, number of pets, future desired salary" && git push
+warning: LF will be replaced by CRLF in test.txt.
+The file will have its original line endings in your working directory
+[main 0e05b43] FIO, age, number of pets, future desired salary
+ 1 file changed, 5 insertions(+)
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 393 bytes | 196.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:klokum82/TXT.git
+   39d8723..0e05b43  main -> main
+
+ 9. Создать файл preferences.txt
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/TXT (main)
+$ touch preferences.txt
+
+ 10. В файл preferences.txt” добавить информацию о своих предпочтениях (Любимый фильм, любимый сериал, любимая еда, любимое время года, сторона которую хотели бы посетить) в формате TXT.
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/TXT (main)
+$ vim preferences.txt
+
+ 11. Создать файл sklls.txt добавить информацию о скиллах которые будут изучены на курсе в формате TXT
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/TXT (main)
+$ touch skills.txt && vim skills.txt
+
+ 12. Сделать коммит в одну строку.
+ 13. Отправить сразу 2 файла на внешний репозиторий.
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/TXT (main)
+$ git add . && git commit -m "preferences and skills" && git push
+warning: LF will be replaced by CRLF in preferences.txt.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in skills.txt.
+The file will have its original line endings in your working directory
+[main d1dbef0] preferences and skills
+ 2 files changed, 32 insertions(+)
+ create mode 100644 preferences.txt
+ create mode 100644 skills.txt
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 1.54 KiB | 526.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:klokum82/TXT.git
+   0e05b43..d1dbef0  main -> main
+
+ 14. На веб интерфейсе создать файл bug_report.txt.
+на вэбе Add file --> Create new file --> Name:bug_report.txt
+
+ 15. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+Commit New File
+
+ 16. На веб интерфейсе модифицировать файл bug_report.txt, добавить баг репорт в формате TXT.
+Choose bug_report.txt --> Edit this file
+
+ 17. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+Press Commit changes
+
+ 18. Синхронизировать внешний и локальный репозиторий TXT
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/test_dir/TXT (main)
+$ git pull
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), 2.02 KiB | 9.00 KiB/s, done.
+From github.com:klokum82/TXT
+   d1dbef0..b8833ef  main       -> origin/main
+Updating d1dbef0..b8833ef
+Fast-forward
+ bug_report.txt | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+ create mode 100644 bug_report.txt
+
+
+
+
+
+

@@ -1,0 +1,123 @@
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA
+$ pwd   (посмотреть где я)
+/d/QA
+
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA
+$ mkdir group_30 (создать папку group_30)
+
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA
+$ cd group_30 (зайти в папку group_30)
+
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/group_30
+$ mkdir qa_1 qa_2 qa_3 (создать 3 папки qa_1 qa_2 qa_3)
+
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/group_30
+$ cd qa_3 (зайти в любую папку)
+
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/group_30/qa_3
+$ touch 123.txt 231.txt 312.txt 456.json 564.json (Создать 5 файлов 3 txt, 2 json)
+
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/group_30/qa_3
+$ mkdir qa_4 qa_5 qa_6 (создать 3 папки qa_4 qa_5 qa_6)
+
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/group_30/qa_3
+$ ls -la (вывести список содержимого папки)
+total 4
+drwxr-xr-x 1 KLOKUM 197121 0 May 21 07:06 ./
+drwxr-xr-x 1 KLOKUM 197121 0 May 21 07:01 ../
+-rw-r--r-- 1 KLOKUM 197121 0 May 21 07:05 123.txt
+-rw-r--r-- 1 KLOKUM 197121 0 May 21 07:05 231.txt
+-rw-r--r-- 1 KLOKUM 197121 0 May 21 07:05 312.txt
+-rw-r--r-- 1 KLOKUM 197121 0 May 21 07:05 456.json
+-rw-r--r-- 1 KLOKUM 197121 0 May 21 07:05 564.json
+drwxr-xr-x 1 KLOKUM 197121 0 May 21 07:06 qa_4/
+drwxr-xr-x 1 KLOKUM 197121 0 May 21 07:06 qa_5/
+drwxr-xr-x 1 KLOKUM 197121 0 May 21 07:06 qa_6/
+
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/group_30/qa_3
+$ vim 231.txt (открыть любой txt файл) 
+               (пишем текст)
+Esc + :wq    (сохранить и выйти)
+
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/group_30/qa_3
+$ cd .. (выйти из папки на уровень выше)
+
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/group_30
+$ mv qa_3/123.txt qa_3/231.txt qa_2 (переместить любые 2 файла, которые были созданы, в папку qa_2)
+
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/group_30
+$ cp qa_3/456.json qa_3/564.json qa_2 (скопировать любые 2 файла, которые были созданы, в папку qa_2)
+
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/group_30
+$ find qa_3/312.txt (найти файл по имени)
+qa_3/312.txt
+
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/group_30
+$ tail -F qa_2/231.txt (посмотреть содержимое файла вреальном времени, с грепом надо быть осторожней;)
+line 1
+line 2
+line 3
+line 4
+line 5
+line 6
+line 7
+line 8
+line 9
+line 0
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/group_30
+$ head -n3 qa_2/231.txt (вывести 3 первые строки из текстового файла)
+line 1
+line 2
+line 3
+
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/group_30
+$ tail -n2 qa_2/231.txt (вывести 2 последние строки из текстового файла)
+line 9
+line 0
+
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/group_30
+$ less qa_2/231.txt (просмотр содержимого длинного файла)
+
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA/group_30
+$ date (вывод даты и времени)
+Sat May 21 07:27:08 RTZ 2022
+
+
+
+Отправить http запрос на сервер http://162.55.220.72:5005/terminal-hw-request
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA
+$ curl 'http://162.55.220.72:5005/terminal-hw-request'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   283  100   283    0     0   1385      0 --:--:-- --:--:-- --:--:--  1407{
+  "Intro": "Hello!! This is your the first response from server",
+  "Tasks": {
+    "Task_1": "Send the next URL in terminal: http://162.55.220.72:5005/get_method?name=(set_your_String)&age=(set_your_number)",
+    "result": [
+      "Your_String",
+      "Your_number"
+    ]
+  }
+}
+
+
+KLOKUM@DESKTOP-KFLIVSH MINGW32 /d/QA
+$ curl 'http://162.55.220.72:5005/get_method?name=Alexey&age=40'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    24  100    24    0     0     94      0 --:--:-- --:--:-- --:--:--    95[
+  "Alexey",
+  "40"
+]
+
+написать скрипт который выполнить автоматически пункт 3,4,5,6,7,8,13
+#!/bin/bash
+
+cd group_30
+mkdir qa_1 qa_2 qa_3
+cd qa_3
+touch 123.txt 231.txt 312.txt 456.json 564.json
+mkdir qa_4 qa_5 qa_6
+ls -la
+cd ..
+mv qa_3/123.txt qa_3/231.txt qa_2
