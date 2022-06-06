@@ -1,0 +1,65 @@
+https://github.com/klokum82/GIT_HW_2.git
+
+GitHub. HW_2
+
+Создаем репозиторий на github GIT_HW_2 и клонируем его (git clone) на компьютер.
+заходим в репозиторий (cd GIT_HW_2).
+
+1. На локальном репозитории сделать ветки для:
+ git branch postman; git branch jmeter; git branch checklists; git branch bug_reports; git branch sql; git branch charles; git branch mobile_testing
+
+- Postman
+- Jmeter
+- CheckLists
+- Bug Reports
+- SQL
+- Charles
+- Mobile testing
+
+2. Запушить все ветки на внешний репозиторий
+git push -u origin checklists;  git push -u origin jmeter; git push -u origin bug_reports; git push -u origin sql; git push -u origin charles; git push -u origin mobile_testing
+
+3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта
+ git checkout bug_reports; touch bug_report.txt; vim bug_report.txt
+
+	1. Заголовок— это краткое описание сути проблемы. В этом поле мы должны коротко и ясно описать выявленный дефект. Уже на этом этапе вы можете придерживаться правила «Где? Что? Когда или в каких условиях?».
+	2. Описание шагов воспроизведения ошибки.
+	3. Ожидаемый результат.
+	4. Актуальный результат.
+	5. Приоритет (high, medium, low).
+	6. Серьезность (blocker, critical, major, minor).
+
+4. Запушить структуру багрепорта на внешний репозиторий
+ git add .
+ git commit -m "create bug_report.txt and add inf"
+ git push
+
+5. Вмержить ветку Bag Reports в Main
+ git checkout main
+ git merge Bug_reports
+
+6. Запушить main на внешний репозиторий.
+ git add .
+ git commit -m "merge branch bug_reports in main"
+ git push
+
+7. В ветке CheckLists набросать структуру чек листа.
+ git checkout checkLists; touch check_list.txt; vim check_list.txt
+
+	1. Минимальный чек-лист состоит из 3-х столбцов ID («Номер»), Tester Actions («Проверка», «Действия тестировщика»), Actual Result («Результат»). По необходимости в чек-лист добавляется поле Comment («Комментарий»).
+	2. Чек-лист может быть разбит на более детализированные задачи и подзадачи.
+	3. Чек-лист расширяется при необходимости проводить тестирование в различных тестовых средах, браузерах.
+	4. Чек-листы используются для различных версий проекта, системы, модуля.
+
+8. Запушить структуру на внешний репозиторий
+ git add.
+ git commit -m "create check_list.txt"
+ git push
+
+9. На внешнем репозитории сделать Pull Request ветки CheckLists в main
+После пуша check_list.txt на локальный репозиторий ветки CheckLists появляется зеленая кнопка Compare&pull requset жмём на нее и всё)
+
+10. Синхронизировать Внешнюю и Локальную ветки Main
+ git checkout main
+ git fetch
+ git pull
