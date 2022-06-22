@@ -4,10 +4,8 @@ let age_2 = 18
 let age_3 = 60 
 
 const checkAge = function(age) {
-    age = Number (age) 
-    if(typeof age == "number") {
-     
-    if (age < age_2){
+    if (age && !isNaN(age)) {
+     if (age < age_2){
         console.log("You don't have access cause your age is " + age + " It's less then")   
     } else if (age >= age_2 && age < age_3){
         console.log("Welcome !")
@@ -19,5 +17,8 @@ const checkAge = function(age) {
 } else {console.log("not integre value")}
 } 
 checkAge(17)
+checkAge(18)
+checkAge(60)
+checkAge(61)
+checkAge("ssss")
 checkAge("24")
-checkAge("24 age")
